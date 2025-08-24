@@ -1,11 +1,12 @@
 import express from 'express';
 
+import { router } from './routes/index.ts';
 
 const server = express();
 
-server.get('/', (req, res) => {
+server.use(express.json());
 
-  return res.send('Olá, DEV!');
-});
+server.use(router);
+
 
 export { server };
